@@ -45,7 +45,7 @@ const EditarPerfil = () => {
             showCancelButton: true
             })
             
-            let str = '../Recursos/Imagenes/ProfilePictures/Profile'+String(profilePicture).trim()+'.jpg';
+            let str = 'ProfilePictures/Profile'+String(profilePicture).trim()+'.jpg';
             if(profilePicture){
                 try
                 {
