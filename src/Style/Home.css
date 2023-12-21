@@ -1,0 +1,19 @@
+.Home-Title{
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.container-SubTitle{
+    margin: 2rem 0rem 4rem 0rem;
+}
+
+.Home-SubTitle{
+    margin: 0rem;
+}
+
+@media (max-width: 500px) {
+    .Home-Title{
+        font-size: 2.5rem;
+    }
+    
+}

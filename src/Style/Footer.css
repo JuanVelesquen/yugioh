@@ -1,0 +1,21 @@
+.footer-credits{
+    padding: 2rem;
+    padding-bottom: 0rem;
+}
+
+.footer-credits h4{
+    padding: 2rem;
+    position: relative;
+}
+
+.footer-credits h4::before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 90%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 25px;
+    top: 0;
+    left: 2.5%;
+}

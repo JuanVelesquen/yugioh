@@ -1,0 +1,29 @@
+.carousel-card.HOME{
+    width: 15%;
+    cursor: pointer;
+}
+
+.carousel-control-prev.HOME{
+    justify-content: flex-end !important;
+}
+.carousel-control-next.HOME{
+    justify-content: flex-start !important;
+}
+
+.carousel-control-prev-icon.HOME{
+    margin-left: 0;
+}
+.carousel-control-next-icon.HOME{
+    margin-right: 0;
+}
+
+.fb{
+    margin-left: 17.25% !important;
+}
+
+@media (max-width: 500px) {
+    .carousel-card.HOME{
+        width: 13%;
+        cursor: pointer;
+    }
+}

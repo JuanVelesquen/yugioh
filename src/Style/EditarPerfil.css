@@ -1,0 +1,195 @@
+/*.editContainer{
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+}
+
+.btn-SaveChanges{
+    padding: 0.65rem 2.5rem;
+    width: max-content;
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: black;
+    transition: 300ms ease-in;
+    color: white;
+}
+
+.btn-SaveChanges:hover{
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: transparent !important;
+    color: black;
+}
+
+.inputNameDisplay{
+    border: none !important;
+    background-color: grey !important;
+}
+
+.avatarContainer{
+    display: flex;
+    gap: 2rem;
+}
+.avatarPicture{
+    max-width: max(224px,40%);
+}
+
+.AvatarBtnContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btnDescription{
+    width: 50%;
+    font-size: .9rem !important;
+    margin-left: 1rem;
+}
+
+.avatarPicture{
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+
+
+
+.editContainer h2{
+    font-size: 2rem;
+    font-weight:600;
+    text-shadow: none;
+    margin: none;
+    text-align: none;
+}
+
+.editContainer h5{
+    font-size: 1rem;
+    font-weight:600;
+}
+
+.editContainer form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 90%;
+}*/
+
+
+
+
+/*input{
+    border:none;
+    border-radius: 0px !important;
+    background-color: transparent !important;
+    max-width: 500px !important;
+    margin: auto;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7) !important;
+}
+
+input::placeholder {
+    color: black !important; 
+    opacity: 1; /* Firefox 
+}
+
+.form-control:focus {
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+form .rg{
+    width: 80%;
+}*/
+
+.avatarPicture{
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-left: auto;
+}
+
+.editContainer h2{
+    font-size: 2.7rem;
+    font-weight:600;
+    text-shadow: none;
+    text-align: left;
+}
+
+.editContainer h5{
+    font-size: 1rem;
+    font-weight:600;
+}
+
+.editContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    gap: 2rem;
+    width: 50%;
+}
+
+
+.avatarPictureContainer{
+    grid-column: span 1;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 220px;
+    margin: auto;
+}
+.titleEditProfile{
+    grid-column: span 1;
+    grid-row-start: 1 ;
+}
+.btnSaveAvatarContainer{
+    grid-column: span 1;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.editContainer .inputNameDisplay{
+    grid-column: span 2;
+    background-color: #D1D1D1;
+    width: 70%;
+    border: none;
+    border-radius: 15px;
+    padding: .5rem 1rem .5rem 1rem;
+    margin: auto;
+}
+
+.btn-Save.Changes{
+    grid-column: span 2;
+    margin: auto;
+}
+
+.btn-Save {
+    padding: 0.65rem 2.5rem;
+    width: max-content;
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: black;
+    transition: 300ms ease-in;
+    color: white;
+}
+
+.btn-Save:hover{
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: transparent !important;
+    color: black;
+}

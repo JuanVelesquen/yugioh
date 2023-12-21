@@ -1,0 +1,35 @@
+.Decks{
+    display: grid;
+    grid-template-columns: repeat(4, 18%);
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0rem 1rem 0rem;
+    grid-auto-rows: 1fr;
+    min-height: min(290px,35vw);
+}
+
+.Decks > *{
+    margin: auto;
+}
+.btnNewDeck{
+    background-color: transparent;
+    background-image: url('../Recursos/Imagenes/EmptyDeck.png');
+    width: 100%;
+    height: 100%;
+}
+
+.btnNewDeck .addIcon{
+    transform: scale(1.5);
+    transition: transform 300ms ease-in;
+}
+
+.btnNewDeck:hover .addIcon{
+    transform: scale(2.5);
+}
+
+@media (max-width: 950px) {
+    .Decks{
+        grid-template-columns: repeat(4, 20%);
+        gap: 1rem;
+    }
+}

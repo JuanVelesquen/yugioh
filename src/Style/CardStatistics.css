@@ -1,0 +1,101 @@
+/*<div className='img-decp-container'>
+className='img' 
+<div className='decp-container'>
+  <h3 className='title-decp'>{card.name}</h3>
+  <h4 className='subtitle-decp'>Description</h4>
+  <p className='decp'>{card.desc}</p>
+</div>
+</div>*/
+.img-decp-container{
+    width: 90%;
+    display:flex;
+    gap: 1rem;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 1rem;
+
+}
+.img-decp-container .img {
+  width: 25%;
+}
+.decp-container{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.title-decp{
+  font-weight: 600;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle-decp{
+  font-weight: 600;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.stats{
+  display: grid;
+  grid-template-columns: repeat(3,30%);
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+}
+
+.stats-item{
+  background-color: transparent;
+  border-radius: 25px;
+  border: 2px solid black;
+  text-align: center;
+  box-shadow: 10px 5px 5px black;
+}
+
+.img-decp-container h5 {
+  text-align: left;
+  margin: 0rem 1rem 0rem 1rem;
+}
+
+.stats-item-content{
+  display: flex;
+  justify-content: flex-start;
+  gap: .5rem;
+  margin: .25rem 0rem 0rem 1rem;
+}
+
+.stats-item-content p{
+  width: max-content;
+}
+
+.stats-item-content img, .stats-item-content .icon{
+  margin-top: 3px
+}
+
+
+@media (max-width: 1100px) {
+  .stats{
+    grid-template-columns: repeat(2,40%);
+    
+  }
+  .img-decp-container .img {
+    width: 30%;
+  }
+  
+}
+@media (max-width: 950px) {
+  .img-decp-container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .decp-container{
+    width: 100%;
+  }
+  .img-decp-container .img {
+    width: 70%;
+  }
+  .stats{
+    justify-content: center;
+  }
+    
+}

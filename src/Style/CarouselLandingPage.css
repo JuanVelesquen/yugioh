@@ -1,0 +1,21 @@
+.carousel-card{
+    width: 45%;
+}
+.carousel-card:nth-child(odd){
+   margin:0rem 1rem 0rem 1.5rem;
+}
+
+
+.carousel-control-prev-icon {
+    margin-left: -7rem;
+}
+
+.carousel-control-next-icon {
+    margin-right: -6rem;
+}
+
+@media (max-width: 1000px) {
+    .carousel-card{
+        width: 40%;
+    }
+}

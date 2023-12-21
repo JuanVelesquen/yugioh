@@ -1,0 +1,82 @@
+.container-searchBar{
+    display: flex;
+    justify-content: center;
+    margin: 6rem 0rem;
+}
+.searchBar{
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: .5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.form-search-cards{
+    display: flex;
+    flex-direction: row;
+}
+
+.search-Card{
+    border: none !important;
+}
+
+.search-Card:focus {
+    outline: none;
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-Search-Card{
+    width: 32px;
+    height: 32px;
+    background-image: url('../Recursos/Imagenes/SearchIcon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-MoreCards{
+    color: white;
+    background-color: black;
+}
+
+.showcase{
+    display: grid;
+    grid-template-columns: repeat(5, 15%);
+    justify-content: space-evenly;
+    margin: auto;
+    gap: 2rem;
+}
+
+.card{
+    width: 100%;
+    transform: scale(100%);
+    transition: transform 300ms ease-in;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(150%);
+    z-index: 20;
+}
+
+
+.center{
+    grid-column: 3;
+}
+
+.btn-SeeMore{
+    margin: 2rem 0rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 850px) {
+    .showcase{
+        grid-template-columns: repeat(3, 25%);
+    }
+    .center{
+        grid-column: 2;
+    }
+    
+}

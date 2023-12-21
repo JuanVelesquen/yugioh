@@ -1,0 +1,86 @@
+.btn-SignIn{
+    padding: 0.65rem 2.9rem;
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: black;
+    transition: 300ms ease-in;
+    color: white;
+}
+
+.btn-SignIn:hover{
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: transparent !important;
+    color: black;
+}
+
+form input, .search-Card{
+    border:none;
+    border-radius: 0px !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7) !important;
+}
+
+form input::placeholder {
+    color: black !important; 
+    opacity: 1; /* Firefox */
+}
+
+.form-control:focus {
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+form .sgIn {
+    width: 80%;
+}
+
+.btn-SignIn.google{
+    color: black;
+    padding: 0.35rem .5rem;
+    background-color: transparent;
+}
+.btn-SignIn.google:hover{
+    background-color: black !important;
+    color: white;
+}
+
+.btn-SignIn.google:hover .google-logo{
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    transition: filter 300ms ease-in, -moz-filter 300ms ease-in, -webkit-filter 300ms ease-in;
+}
+
+.google-logo{
+    width: 32px;
+    margin-left:.5rem ;
+}
+
+
+
+
+
+
+
+
+
+
+/*input::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}*/

@@ -1,0 +1,59 @@
+.LogIn-LandingPage{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Carousel{
+    width: 50%;
+}
+
+.carousel-cards{
+    margin: auto;
+    width: 80%;
+}
+
+h1{
+    font-size: 3.5rem;
+    font-weight:800;
+    text-align: center;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2{
+    font-size: 3rem;
+    font-weight:700;
+    text-align: center;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+h4{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.SignIn{
+    width: 45%;
+    margin: auto;
+    margin-left: -1.5rem;
+}
+
+@media (max-width: 1000px) {
+    .LogIn-LandingPage{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .Carousel{
+        width: 100%;
+    }
+
+    .SignIn{
+        width: 100%;
+        margin: auto;
+        margin-left: 0rem;
+    }
+    
+}

@@ -1,0 +1,154 @@
+.navbar-nav{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between!important;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    margin: 1rem 2rem 0rem 2rem;
+}
+
+.btn-Register{
+    border-radius: 25px;
+    padding: 0.65rem 1rem 0.65rem 1rem;
+    border: 1px solid black;
+    background-color: black;
+    transition: 300ms ease-in;
+    color: white;
+}
+
+.btn-Register:hover{
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: none;
+    color: black;
+}
+
+/*---------------NAVBAR HOME------------------*/
+
+a{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.navbar-toggler,.nav-item.toggler{
+    display: none;
+}
+
+
+
+.offcanvas .navbar-nav{
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo{
+    width: 100%;
+    max-width:  180px;
+    min-width: 120px;
+}
+
+.profile, .profile.nav-item{
+    margin: 0 ;
+    padding: 0;
+}
+
+.navbar-nav.profile-logout{
+    justify-content: flex-end !important;
+}
+
+.nav-link.dk{
+   width: max-content;
+}
+
+
+
+.logout{
+    background-color: transparent;
+    width: 48px;
+    border: none;
+}
+.logout img{
+    width: 100%;
+}
+
+.nav-item.logout-container{
+    margin: 1rem .5rem 0rem 0rem;
+}
+
+
+.offcanvas-body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.btn-close{
+    padding: 1rem !important;
+}
+
+.offcanvas {
+    background-image: url('../Recursos/Imagenes/background.jpg');
+    max-width: 70%;
+    /*align-items: flex-start;*/
+}
+
+.offcanvas-body .nav-item{
+    width: 100%;
+    padding: 0rem 1.5rem 0rem 0.5rem;
+    border:none;
+    border-radius: 0px !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7) !important;
+}
+.offcanvas-body .navbar-nav.SingOut .nav-item{
+    border: none !important;
+}
+.offcanvas-body .navbar-nav.SingOut .nav-item{
+    width: auto;
+}
+
+.offcanvas-body .navbar-nav{
+    gap: 1rem;
+}
+
+.profilePic{
+    border-radius: 50%;
+    width: 100%;
+    border: 1px solid black;
+}
+.nav-item.profile-container{
+    justify-content: flex-end;
+}
+.nav-link.profile-container{
+    max-width: min(50%,50px);
+    max-height: min-content;
+}
+
+@media (max-width: 750px) {
+    .logo{
+        max-width:  min(180px, 60%);
+    }
+    .nav-item.dissapear,.navbar-nav.dissapear{
+        display: none;
+    }
+    .navbar-toggler,.nav-item.toggler{
+        display: block;
+        margin-top: 0.5rem;
+    }
+    .nav-item{
+        margin: 0;
+    }
+    .nav-link{
+        width: fit-content;
+    }
+    .nav-item.profile-container {
+        justify-content: flex-start;
+        margin-left: 1rem;
+    }
+}

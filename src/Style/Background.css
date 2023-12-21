@@ -1,0 +1,8 @@
+html > * {
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: url('../Recursos/Imagenes/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
