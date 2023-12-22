@@ -1,11 +1,9 @@
-{ 
-<<<<<<< HEAD
-    "rewrites": [
-=======
-    "routes": [
->>>>>>> parent of 5bc1089 (checking if I remove routes something breaks)
-    { "src": "/", "dest": "/" },
-    { "src": "/Home", "dest": "/Home" },
-    { "src": "/Register", "dest": "/Register" }
+{
+    "rewrites": 
+    [
+        { "source": "/", "destination": "/" },
+        { "source": "/Home", "destination": "/Home" },
+        { "source": "/Login", "destination": "/Login" },
+        { "source": "/Register", "destination": "/Register" }
     ]
 }
