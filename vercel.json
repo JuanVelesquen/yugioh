@@ -1,7 +1,0 @@
-{ 
-    "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/Home", "dest": "/Home" },
-    { "src": "/Register", "dest": "/Register" }
-    ]
-}
