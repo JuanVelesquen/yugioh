@@ -6,6 +6,7 @@ import Register from './Paginas/Register'
 import Home from './Paginas/Home'
 import MyDecks from './Paginas/MyDecks';
 import Profile from './Paginas/Profile';
+import CrearMazo from './Paginas/CrearMazo';
 import { AuthProvider } from './Context/AuthContext';
 import './Style/Background.css'
 import { ProtectedRoute } from './Componentes/ProtectedRoute';
@@ -23,7 +24,10 @@ function App() {
             <Route path='/Register' element={
             <Register/>} ></Route>
             <Route path='/Login' element={<Login/>} ></Route>
+            <ProtectedRoute>
             <Route path='/Profile' element={<Profile/>} ></Route>
+            </ProtectedRoute>
+            
             <Route path='/MyDecks' element={
               <ProtectedRoute>
                 <MyDecks/>
