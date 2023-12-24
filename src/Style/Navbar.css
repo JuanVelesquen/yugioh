@@ -126,8 +126,8 @@ a{
     justify-content: flex-end;
 }
 .nav-link.profile-container{
-    max-width: min(50%,50px);
-    max-height: min-content;
+    max-width: 50px;
+    padding: 0;
 }
 
 @media (max-width: 750px) {

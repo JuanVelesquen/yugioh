@@ -1,0 +1,25 @@
+.btn-SelectCard{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.container-DeckCreated{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr) ;
+    width: 75%;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.cardSelected{
+    grid-column: span 1;
+    width: 100%;
+}
+.addCardSwalTitle{
+    font-size: 1rem;
+}
+/*swal2-icon swal2-success swal2-icon-show*/
+/*swal2-popup swal2-modal swal2-icon-success swal2-show*/

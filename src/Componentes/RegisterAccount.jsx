@@ -1,7 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-/*import { collection, query, where, getDocs } from 'firebase/firestore';
-import { db } from '../FireBase/config'*/
 import { useAuthContext } from '../Context/AuthContext';
 import { useNavigate } from "react-router-dom";
 import '../Style/Register.css'
@@ -9,7 +7,7 @@ import Swal from 'sweetalert2'
 
 const RegisterAccount = () => {
 
-    const {signup} = useAuthContext();
+    const {signup, user} = useAuthContext();
     const navigate = useNavigate();
 
     const [valores, setValores] = useState({
@@ -52,14 +50,43 @@ const RegisterAccount = () => {
                 icon: 'error',
                 confirmButtonText: 'Cool'
               })
+              //return;
         }
 
+        /*const querySnapshot = await getDocs(collection(db, "Usuarios"));
+        querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+        });*/ //Obtener todos los datos de un documento
 
+        /*const docRef = doc(db, "Usuarios", "Prueba");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+        }*/ //OBTENER UN DOCUMENTO EN ESPECIFICO
+        
+        //response.docs[0].data()); informacion dentro del objeto
+        //response.docs[0].id); el id del objeto
+       /* const usuarioRef = collection(db,"Usuarios");
+        addDoc(usuarioRef,valores);*/
         //Agregar informacion a la base de datos
         /*console.log("Enviado..",{valores});
-        const usuarioRef = collection(db,"Usuarios");
-        addDoc(usuarioRef,valores);*/
-
+        */
+        /*const usuarioRef = collection(db,'Usuarios');
+        if (true){
+            console.log(valores.email)
+            console.log('Entre al IF');
+            getDocs()
+            .then((response) => {
+                    response.docs.map( (resp) => {
+                        console.log(resp.data())
+                    })
+                }
+            )
+        }*/
         //Recuperar informacion de la base de datos con una simple Query
         /*const usuarioRef = collection(db,'Usuarios');
         if (valores.email){
