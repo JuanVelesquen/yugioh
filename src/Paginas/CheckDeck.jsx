@@ -1,5 +1,5 @@
 import React from 'react'
-import CardsShowcase from '../Componentes/CardsShowcase'
+import CardsShowcase from '../Componentes/CardsShowcaseDeck.jsx'
 import Navbar from '../Componentes/NavbarHome'
 import Footer from '../Componentes/Footer'
 import { useState, useEffect } from 'react'
@@ -14,7 +14,6 @@ const MyDecks = () => {
   return (
     <>
       <Navbar/>
-      <FirebaseDecks/>
       <CardsShowcase/>
       <Footer/>
     </>

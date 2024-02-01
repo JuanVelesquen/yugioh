@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState} from 'react';
-/*import { collection, query, where, getDocs } from 'firebase/firestore';
-import { db } from '../FireBase/config'*/
+import { doc,setDoc, getDoc } from 'firebase/firestore';
+import { db } from '../FireBase/config'
 import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../Context/AuthContext';
 import { useEffect } from 'react';
@@ -82,7 +82,9 @@ const SingIn = () => {
     }
 
     const handleGoogleEvent = async () => {
-        await loginWithGoogle();
+        const user = await loginWithGoogle();
+        //await getDoc(doc(db,'users'))
+        
         navigate('/Home');
     }
     

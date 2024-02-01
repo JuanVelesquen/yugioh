@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom';
 import '../Style/CardsShowcase.css'
 
-const CardsShowcase = ({category}) => {
+const CardsShowcase = () => {
     const [endpoint, setendpoint] = useState("");
     const { cards, isLoading } = useFetchCards(endpoint);
     const [MaxAmountCards, setMaxAmountCards] = useState(20);
@@ -46,7 +46,7 @@ const CardsShowcase = ({category}) => {
     },[isLoading, MaxAmountCards, cards])
 
     function handleSeeMoreButton(){
-        setMaxAmountCards(MaxAmountCards+10);
+        setMaxAmountCards(MaxAmountCards+15);
     }
 
     function handleSearchButton(){
@@ -100,7 +100,7 @@ const CardsShowcase = ({category}) => {
                             src => (
                                 <Link key={src.id} to='/CardDetails'
                                     state= {{id: src.id, img:src.img}}>
-                                    <img  className='card' src={src.img} alt="" />
+                                    <img loading='lazy' className='card' src={src.img} alt="" />
                                 </Link>
                             
                             )

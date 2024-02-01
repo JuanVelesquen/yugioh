@@ -1,0 +1,14 @@
+.deck{
+    width: 100%;
+}
+
+.btnDeck{
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.DeckCreatedCC{
+    background-color: #7066e0 !important;
+}
