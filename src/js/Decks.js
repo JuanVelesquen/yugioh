@@ -1,17 +1,14 @@
 import { db } from '../FireBase/config'
-import { doc,getDoc} from 'firebase/firestore';
+import { doc,getDoc, setDoc} from 'firebase/firestore';
 import { useState,useEffect } from "react";
-import { useAuthContext } from '../Context/AuthContext';
 
 export const useFirebaseDecks = () =>{
-  
-    const {user, loading} = useAuthContext();
     const [decks,setDecks] = useState();
     const [isLoading, setIsLoading] = useState(true);
 
     const fetchDecks = async() =>{
         try{
-            const docRef = doc(db, "users", user.uid);
+            const docRef = doc(db, "users", sessionStorage.getItem('userUid'));
             const docSnap = await getDoc(docRef);
             setDecks(docSnap.data().decks);
             setIsLoading(false)
@@ -22,13 +19,40 @@ export const useFirebaseDecks = () =>{
   }
 
   useEffect(() =>{
-    if(!loading){
         fetchDecks();
-    }
-  },[loading])
+  },[])
 
   return {
     decks,
     isLoading
+  }
+}
+
+export const postDeck = async (deck) =>{
+  const ID = sessionStorage.getItem('userUid');
+  const deckLength = sessionStorage.getItem('currentDeck');
+  const docRef = doc(db, "users", ID);
+  const docSnap = await getDoc(docRef);
+  const user = docSnap.data();
+  
+  if(user){
+      const email = user.email;
+      const decks = user.decks;
+      const currentDeckLength = Object.keys(decks).length;
+      let array = [];
+      deck.map((card) => 
+      {
+      array.push({id: card.id, img: card.img, pos:card.pos})
+      })
+      decks[deckLength-1] = array;
+      const currentUser = {email, decks}
+      try{
+        await setDoc(doc(db, "users", ID), currentUser);
+      }
+      catch(error){
+        return error;
+      }
+      return true;
+      
   }
 }

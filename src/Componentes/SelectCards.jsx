@@ -1,17 +1,21 @@
 import React from 'react'
 import { useFetchCards } from '../js/Cards'
 import { useState, useEffect } from 'react'
-import {Link} from 'react-router-dom';
+import { useFirebaseDecks } from '../js/Decks.js';
+import { postDeck } from '../js/Decks';
 import Swal from 'sweetalert2'
 import '../Style/CardsShowcase.css'
 import '../Style/SelectCards.css'
 
 const SelectCards = () => {
     const [endpoint, setendpoint] = useState("");
+    const {decks} = useFirebaseDecks();
     const { cards, isLoading } = useFetchCards(endpoint);
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(0);
+    const [cardID, setCardID] = useState(0);
     const [MaxAmountCards, setMaxAmountCards] = useState(20);
     const [searchURL, setsearchURL] = useState("");
+    const [refresh, setrefresh] = useState(false)
     const [deck, setDeck] = useState({
         img: [],
         id: null
@@ -47,7 +51,15 @@ const SelectCards = () => {
                 setDeck(array);
             }
         }
-    },[isLoading, MaxAmountCards, cards, counter])
+        if(decks){
+            console.log(sessionStorage.getItem('currentDeck')-1);
+            if(Object.keys(decks).length > sessionStorage.getItem('currentDeck')-1){
+                setFinalDeck(decks[sessionStorage.getItem('currentDeck')-1]);
+                setCounter(decks[sessionStorage.getItem('currentDeck')-1]);
+            }
+        }
+
+    },[isLoading, MaxAmountCards, cards, counter,decks, refresh])
 
     function handleSeeMoreButton(){
         setMaxAmountCards(MaxAmountCards+15);
@@ -69,6 +81,27 @@ const SelectCards = () => {
         setendpoint(str);
         setsearchURL("");
         
+    }
+
+    const saveDeck = async () => {
+        try
+        {
+            await postDeck(finalDeck);
+            Swal.fire({
+                icon: "success",
+                title: "Your deck was saved succesfully",
+                showConfirmButton: false,
+                timer: 1500
+                });
+        }catch(error)
+        {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error.message,
+                footer: '<a href="#">Why do I have this issue?</a>'
+                });
+        }
     }
     
     const handleSelectedCard = (e) => {
@@ -102,9 +135,11 @@ const SelectCards = () => {
         if(flag){
             obj.push({
                 img: e.target.src,
-                id: e.target.id
+                id: e.target.id,
+                pos: finalDeck.length
             })
             setFinalDeck(obj);
+            console.log(finalDeck)
             setCounter(counter+1);
             Swal.fire({
                 position: "top-end",
@@ -117,9 +152,32 @@ const SelectCards = () => {
                 customClass: {
                     title: 'addCardSwalTitle'
                 },
-                timer: 750
+                timer: 500
               });
         }
+    }
+
+    const selectedCard = (e) =>{
+        Swal.fire({
+            title: "Remove card from deck?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            denyButtonText: `No`
+          }).then((result) => {
+            if (result.isConfirmed) {
+                let tempDeck = finalDeck;
+                let index = parseInt(e.target.id);
+                tempDeck.splice(index,1);
+                for(let i = index; i < finalDeck.length; i++){
+                    tempDeck[i].pos = tempDeck[i].pos - 1; 
+                }
+                setFinalDeck(finalDeck);
+                setrefresh(!refresh);
+            } else if (result.isDenied) {
+
+            }
+          });
     }
 
 
@@ -132,8 +190,14 @@ const SelectCards = () => {
         <div className='container-DeckCreated'>
         {
         finalDeck.length > 0?
-        finalDeck.map((element) => <img className='cardSelected' src={element.img}/>
+        finalDeck.map(
+            (element) => <img onClick={selectedCard} loading='lazy' key={element.pos} id={element.pos} className='cardSelected' src={element.img}/>   
         )
+        :
+        <></>
+        }
+        {finalDeck.length >= 19?
+        <button onClick={saveDeck} className="btn btn-saveDeck btn-Register" type="button">Save Deck</button>
         :
         <></>
         }

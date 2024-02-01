@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect } from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import {auth} from '../FireBase/config'
 import { useState } from 'react';
-import { doc,getDoc,setDoc,collection,query,where } from 'firebase/firestore';
+import { doc,getDoc,setDoc} from 'firebase/firestore';
 import { db } from '../FireBase/config'
 export const authContext = createContext();
 
@@ -26,9 +26,10 @@ export function AuthProvider({children}){
     
     const signup = async (email,password) =>  {
         const credentials = await createUserWithEmailAndPassword(auth, email, password);
-        const decks = [];
+        const decks = {};
         const newUser = {email, decks}
         await setDoc(doc(db, "users", credentials.user.uid), {...newUser});
+        setUserID(credentials.user.uid);
         return credentials;
     }
 
@@ -58,10 +59,10 @@ export function AuthProvider({children}){
           {
             const docRef = doc(db, "users", currentUser.uid);
             const docSnap = await getDoc(docRef);
-            //console.log(docSnap.data().decks)
+            setUserID(currentUser.uid);
             if(!docSnap.data()){
                 let email = currentUser.email;
-                const decks = [];
+                const decks = {};
                 const newUser = {email, decks}
                 await setDoc(doc(db, "users", currentUser.uid), {...newUser});
             }
@@ -81,9 +82,35 @@ export function AuthProvider({children}){
         
     });
 
+    function setUserID(ID){
+      sessionStorage.setItem('userUid', ID);
+      console.log(sessionStorage.getItem('userUid'));
+    }
+
     const updateUserProfilePicture = (urlPicture) => updateProfile(auth.currentUser, {photoURL:urlPicture});
 
-    const login = (email,password) => signInWithEmailAndPassword(auth,email,password);
+    const login = async (email,password) => {
+      let result  = await signInWithEmailAndPassword(auth,email,password)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        currentUser = result.user
+        setUserID(currentUser.uid)
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+      return result
+    }
 
     const closeSession = () => signOut(auth);
 

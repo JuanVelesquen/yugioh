@@ -6,6 +6,7 @@ import Register from './Paginas/Register'
 import Home from './Paginas/Home'
 import MyDecks from './Paginas/MyDecks';
 import Profile from './Paginas/Profile';
+import CheckDeck from './Paginas/CheckDeck.jsx'
 import { AuthProvider } from './Context/AuthContext';
 import './Style/Background.css'
 import { ProtectedRoute } from './Componentes/ProtectedRoute';
@@ -41,6 +42,12 @@ function App() {
             <Route path='/MyDecks' element={
               <ProtectedRoute>
                 <MyDecks/>
+              </ProtectedRoute>
+            } ></Route>
+
+            <Route path='/CheckDeck' element={
+              <ProtectedRoute>
+                <CheckDeck/>
               </ProtectedRoute>
             } ></Route>
 

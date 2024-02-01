@@ -21,5 +21,12 @@
 .addCardSwalTitle{
     font-size: 1rem;
 }
-/*swal2-icon swal2-success swal2-icon-show*/
-/*swal2-popup swal2-modal swal2-icon-success swal2-show*/
+
+.btn-saveDeck{
+    grid-column: span 10;
+    margin: auto;
+}
+
+.cardSelected:hover{
+    cursor: pointer;
+}
