@@ -30,3 +30,23 @@
 .cardSelected:hover{
     cursor: pointer;
 }
+
+@media (max-width: 850px) {
+      
+    .container-DeckCreated{
+        grid-template-columns: repeat(5, 1fr) ;
+    }
+    .btn-saveDeck{
+        grid-column: span 5;
+    }
+}
+
+@media (max-width: 650px) {
+      
+    .container-DeckCreated{
+        grid-template-columns: repeat(3, 1fr) ;
+    }
+    .btn-saveDeck{
+        grid-column: span 3;
+    }
+}

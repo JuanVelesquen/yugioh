@@ -77,8 +77,8 @@ const FirebaseDecks = () => {
 
                 Object.keys(decks).length == 2?
                 <div className='Decks'>
-                <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
-                <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
                 <button onClick={handleDeckEvent} className='btnNewDeck'><FontAwesomeIcon className='addIcon' icon={faPlus} /></button>
                 <button onClick={handleDeckEvent} className='btnNewDeck'><FontAwesomeIcon className='addIcon' icon={faPlus} /></button>
                 </div> 
@@ -86,17 +86,17 @@ const FirebaseDecks = () => {
 
                     Object.keys(decks).length == 3?
                     <div className='Decks'>
-                    <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
-                    <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
-                    <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                    <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                    <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                    <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
                     <button onClick={handleDeckEvent} className='btnNewDeck'><FontAwesomeIcon className='addIcon' icon={faPlus} /></button>
                     </div> 
                     :
                     <div className='Decks'>
-                    <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
-                    <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
-                    <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
-                    <button className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                    <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                    <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                    <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
+                    <button onClick={handleCreatedDeckEvent} className='btnDeck'><img className='deck' src={DeckImage} alt="" /></button>
                     </div> 
     }
     </div>
