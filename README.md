@@ -19,3 +19,7 @@ To ensure secure storage of user information, Firebase was implemented as a data
 ![image](https://github.com/user-attachments/assets/8a7d2ff9-bf7d-4570-b089-40631eacb02c)
 
 https://yugioh-eta.vercel.app/
+
+Presentation of the web page in spanish/ Presentacion de la pagina en español
+
+https://www.youtube.com/watch?v=a5TzDcA7ooo&ab_channel=juanIgnacioVelesquenSaenz
